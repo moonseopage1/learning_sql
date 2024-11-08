@@ -24,14 +24,14 @@ VALUES
     ('Tom', 'Wilson', 24, 'C', 'Chemistry', 'twilson@chem.com', '1993-09-18', 'O+', 'USA'),
     ('Olivia', 'Taylor', 21, 'D', 'Mathematics', 'otaylor@math.com', '1996-02-02', 'AB-', 'USA'),
     ('James', 'Anderson', 25, 'E', 'Computer Science', 'janderson@cs.com', '1990-06-10', 'A+', 'Germany'),
-    ('Ava', 'Jackson', 22, 'B', 'Physics', 'ajackson@physics.com', '1992-10-05', 'B-', 'France'),
+    ('Ava', 'Jackson', 22, 'B', 'Physics', null, '1992-10-05', 'B-', 'France'),
     ('Daniel', 'White', 28, 'F', 'Chemistry', 'dwhite@chem.com', '1988-03-20', 'AB+', 'USA'),
     ('Sophia', 'Harris', 23, 'C', 'Biology', 'sharris@bio.com', '1994-07-15', 'O-', 'Italy'),
     ('Ethan', 'Thompson', 30, 'D', 'Geography', 'ethompson@geo.com', '1987-12-31', 'AB-', 'Spain'),
     ('Mia', 'Clark', 27, 'P', 'Computer Science', 'mclark@cs.com', '1993-09-10', 'A+', 'Portugal'),
     ('Alexander', 'Lewis', 29, 'A', 'Mathematics', 'alewis@math.com', '1991-05-27', 'B-', 'Netherlands'),
     ('Isabella', 'Robinson', 24, 'A', 'Physics', 'irobinson@physics.com', '1993-11-18', 'AB+', 'Poland'),
-    ('Matthew', 'Walker', 26, 'C', 'Chemistry', 'mwalker@chem.com', '1992-08-30', 'O-', 'Denmark'),
+    ('Matthew', 'Walker', 26, 'C', 'Chemistry', null, '1992-08-30', 'O-', 'Denmark'),
     ('Emily', 'Turner', 21, 'D', 'Biology', 'eturner@bio.com', '1996-01-02', 'AB-', 'Finland');
 
 
@@ -94,3 +94,13 @@ SELECT min(age) FROM students;
 SELECT sum(age) FROM students;
 SELECT count(*) FROM students;
 SELECT max(length(first_name)) FROM students;
+
+--  Logical Negation NOT, understanding NULL and the Null-Coalescing
+SELECT * FROM students
+    WHERE NOT country = 'USA';
+
+SELECT * FROM students
+    WHERE email IS NOT NULL;
+
+
+SELECT COALESCE(email, 'N/A') as email, blood_group, first_name FROM students;

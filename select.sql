@@ -38,6 +38,7 @@ VALUES
 TRUNCATE TABLE students;
 
 
+SELECT * FROM students;
 SELECT * FROM students ORDER BY dob DESC;
 
 SELECT DISTINCT blood_group FROM students;
@@ -104,3 +105,16 @@ SELECT * FROM students
 
 
 SELECT COALESCE(email, 'N/A') as email, blood_group, first_name FROM students;
+
+SELECT * FROM students
+    WHERE country IN('USA', 'Australia','Bangladesh');
+SELECT * FROM students
+    WHERE country NOT IN('USA', 'Australia','Bangladesh');
+SELECT * FROM students
+    WHERE dob BETWEEN '1995-01-01' AND '1999-01-01' ORDER BY dob;
+
+SELECT * FROM students
+WHERE first_name LIKE '%a';
+
+SELECT * FROM students
+WHERE first_name ILIKE 'a%';

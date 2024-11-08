@@ -127,3 +127,7 @@ SELECT * FROM students LIMIT 5  OFFSET 5 * 3;
 
 DELETE FROM students
     WHERE grade = 'C' AND country = 'USA';
+
+UPDATE students
+    SET email = 'default@gmail.com' 
+    WHERE student_id = 59

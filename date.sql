@@ -22,3 +22,7 @@ SELECT CURRENT_DATE - INTERVAL '1 month';
 SELECT age(CURRENT_DATE,'2002-01-15');
 
 SELECT *,age(CURRENT_DATE,dob) from students;
+
+SELECT extract(year from '2024-11-21'::date);
+
+SELECT 'n'::BOOLEAN;

@@ -42,3 +42,6 @@ SELECT * FROM "post" as p
 
 SELECT * FROM "post" as p
    RIGHT JOIN "user" as u ON p.user_id = u.id;
+
+SELECT * FROM "post" as p
+   FULL JOIN "user" as u ON p.user_id = u.id;

@@ -31,4 +31,14 @@ SELECT * FROM "user";
 SELECT * FROM "post";
 
 SELECT title,username FROM "post" as p
-    JOIN "user" as u ON p.user_id = u.id;
+   INNER JOIN "user" as u ON p.user_id = u.id;
+
+INSERT INTO post(id,title,user_id) VALUES
+    (5,'Anzuman is very professional 🙌',NULL);
+
+
+SELECT * FROM "post" as p
+   LEFT JOIN "user" as u ON p.user_id = u.id;
+
+SELECT * FROM "post" as p
+   RIGHT JOIN "user" as u ON p.user_id = u.id;

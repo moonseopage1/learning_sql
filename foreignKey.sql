@@ -4,6 +4,21 @@ CREATE Table "user"(
     username VARCHAR(25) NOT NULL
 )
 
+-- Cascading Deletion -> ON DELETE CASCADE
+-- CREATE Table post(
+--     id SERIAL PRIMARY KEY,
+--     title text NOT NULL,
+--     user_id INTEGER REFERENCES "user"(id) ON DELETE CASCADE
+-- )
+
+-- Setting NULL -> ON DELETE SET NULL
+-- CREATE Table post(
+--     id SERIAL PRIMARY KEY,
+--     title text NOT NULL,
+--     user_id INTEGER REFERENCES "user"(id) on delete set null
+-- )
+
+-- SET Default value -> ON DELETE SET DEFAULT
 CREATE Table post(
     id SERIAL PRIMARY KEY,
     title text NOT NULL,
@@ -42,3 +57,9 @@ INSERT INTO post(title,user_id) VALUES
 
 DELETE FROM "user" WHERE id = 4;
 -- DELETE FROM "post" WHERE id = 22;
+
+-- Deletion constraint on DELETE user
+-- Restrict Deletion -> ON DELETE RESTRICT / ON DELETE NO ACTION (default)
+-- Cascading Deletion -> ON DELETE CASCADE
+-- Setting NULL -> ON DELETE SET NULL
+-- Set Default value -> ON DELETE SET DEFAULT
